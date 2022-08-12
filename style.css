@@ -26,7 +26,7 @@ body{
     max-width: 100vw;
     padding: 2rem;
 
-    background-color: var(--Dark-Grayish-Blue);
+    background-color: var(--Dark-Blue);
 
     display: flex;
     align-items: center;
@@ -41,6 +41,8 @@ body{
     height: 33.4rem;
     padding: 50px;
     border-radius: 1.8rem;
+
+    background-color: var(--Dark-Grayish-Blue);
     
     display: flex;
     flex-direction: column;
