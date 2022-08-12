@@ -2,24 +2,13 @@ const id = document.querySelector('.id')
 const adv = document.querySelector('.advice')
 const newAdv = document.querySelector('#btn-dice')
 
-function requestGet(url){
-    let request = new XMLHttpRequest()
-    request.open('GET', url, false)
-    request.send()
-
-    return request.responseText
-}
-
-let data = requestGet("https://api.adviceslip.com/advice")
-let advices = JSON.parse(data)
-
-
-
-
-function newAdvice(){
-    id.innerHTML = `Advice  #${advices.slip.id}`
-    adv.innerHTML = `${advices.slip.advice}`
-}
-
+const fetchAdvice = () => {
+    fetch("https://api.adviceslip.com/advice")
+      .then((response) => response.json())
+      .then((data) => {
+        id.innerText = 'Advice #' + data.slip.id;
+        adv.innerText = `"${data.slip.advice}"`;
+    });
+};
 
 

@@ -30,6 +30,9 @@ body{
 
     display: flex;
     align-items: center;
+    justify-content: center;
+
+    position: relative;
 
 }
 
@@ -38,7 +41,6 @@ body{
     height: 33.4rem;
     padding: 50px;
     border-radius: 1.8rem;
-    margin: 0 auto;
     
     display: flex;
     flex-direction: column;
@@ -47,26 +49,31 @@ body{
     align-items: center;
 
     box-shadow: 1px 3px 15px 1px rgba(0,0,0,0.76);
+
+    position: relative;
 }
 
 .card h1{
     color: var(--Neon-Green);
     font-size: 1.8rem;
+    text-transform: uppercase;
 }
 
 .card .advice{
     font-size: 2.5rem;
     text-align: center;
     color: var(--Light-Cyan);
+    text-transform: uppercase;
 }
 
 .card .divider{
     max-width: 100%;
 }
 
-.card button{
+#btn-dice{
     width: 5.0rem;
     height: 5.0rem;
+    border: 2px solid black;
 
     border-radius: 50%;
     background-color: var(--Neon-Green);
@@ -77,22 +84,34 @@ body{
 
     cursor: pointer;
 
-    position: fixed;
-    top: 72%;
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+    Transform: translate(-50%, -50%);
+}
+
+#btn-dice:hover {
+    box-shadow: 1px 1px 20px 1px var(--Neon-Green),
+    -1px -1px 20px 1px rgba(82, 255, 168, 0.2);
+    transition: .3s ease-in-out;
 }
 
 
 @media screen and (max-width: 570px) {
     
-    body{
-        justify-content: center;
+    body{   
+        flex-direction: column;
         align-items: center;
+        height: 100vh;
     }
 
+
+
     .card{
-        width: 97%rem;
-        height: 52rem;
-        padding: 63px 98px;
+        width: 97%;
+        height: 85%;
+        padding: 6.3rem 2.5rem;
         justify-content: space-between;
     }
 
@@ -101,11 +120,15 @@ body{
     }
 
 
-    .card #btn-dice{
+    #btn-dice{
         width: 6rem;
         height: 6rem;
-        top: 86%;
-        
+ 
+        position: absolute;
+
+        top: 100%;
+        left: 50%;
+        Transform: translate(-50%, -50%);
     }
 }
 
